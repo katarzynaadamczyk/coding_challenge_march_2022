@@ -1,6 +1,5 @@
 ''' Solution to task from https://www.instagram.com/p/Caog0rsgkWL/ '''
 
-from string import ascii_lowercase, ascii_uppercase
 import unittest
 
 def reverse_string(word):
