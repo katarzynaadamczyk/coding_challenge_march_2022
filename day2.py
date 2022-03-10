@@ -1,8 +1,7 @@
 ''' Solution to task from https://www.instagram.com/p/Cal8PwqAnGM/ '''
 
-import unittest
-
 from string import ascii_lowercase, ascii_uppercase
+import unittest
 
 def switch_case(word):
     result = ''
