@@ -8,7 +8,7 @@ import unittest
 def add_dots_v1(word: string) -> string:
     return '.'.join(word)
 
-# one dot after each alphanumeric sign 
+# one dot between alphanumeric signs in a sentence 
 def add_dots_v2(word: string) -> string:
     return ''.join([word[index] + '.' if word[index:index+2].isalpha() else word[index] for index in range(len(word) - 1)]) + word[-1]
 
