@@ -5,7 +5,7 @@ import unittest
 
 # one-liner
 def all_equal_v1(lstofnums: List[int]) -> bool:
-    return len(lstofnums) > 0 and len(set(lstofnums)) == 1
+    return len(set(lstofnums)) == 1
 
 # loop version
 def all_equal_v2(lstofnums: List[int]) -> bool:
