@@ -4,7 +4,13 @@ import unittest
 
 
 def is_ugly(num: int) -> bool:
-    return num % 2 == 0 or num % 3 == 0 or num % 5 == 0
+    while num % 2 == 0:
+        num //= 2
+    while num % 3 == 0:
+        num //= 3
+    while num % 5 == 0:
+        num //= 5
+    return num == 1
 
 
 class TestAppMethods(unittest.TestCase):
@@ -15,6 +21,9 @@ class TestAppMethods(unittest.TestCase):
         self.assertEqual(is_ugly(9), True)
         self.assertEqual(is_ugly(7), False)
         self.assertEqual(is_ugly(13), False)
+        self.assertEqual(is_ugly(122), False)
+        self.assertEqual(is_ugly(123), False)
+        self.assertEqual(is_ugly(79), False)
         
         
 if __name__ == '__main__':
