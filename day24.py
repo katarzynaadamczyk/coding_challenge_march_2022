@@ -1,4 +1,4 @@
-''' Solution to task from https://www.instagram.com/p/CbcA5qfAurB/ '''
+''' Solution to task from https://www.instagram.com/p/Cbek7shAwHa/ '''
 
 
 from typing import List
