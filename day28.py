@@ -8,7 +8,7 @@ def digit_adder_v1(num: int) -> int:
     return (-1 if num < 0 else 1 ) * \
         int(''.join([str(int(x) + 1) for x in list(str(num))]))
     
-
+# second solution
 def digit_adder_v2(num: int) -> int:
     if num < 0:
         retval = '-'
