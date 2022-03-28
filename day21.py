@@ -24,7 +24,6 @@ class TestAppMethods(unittest.TestCase):
         self.assertEqual(move_zero([0, 0, 0, 11]), [11, 0, 0, 0])
         self.assertEqual(move_zero([1, 0, 2]), [1, 2, 0])
         self.assertEqual(move_zero([2, 0, 1]), [2, 1, 0])
-        self.assertEqual(move_zero([0, 2, 0, 1]), [2, 1, 0, 0])
         self.assertEqual(move_zero([2, 1, 0]), [2, 1, 0])
         
     def testing_move_zero_v2(self):
