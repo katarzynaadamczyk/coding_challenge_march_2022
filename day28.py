@@ -6,7 +6,7 @@ import unittest
 # one-liner
 def digit_adder_v1(num: int) -> int:
     return (-1 if num < 0 else 1 ) * \
-        int(''.join([str(int(x) + 1) for x in list(str(num))]))
+        int(''.join([str(int(x) + 1) for x in list(str(abs(num)))]))
     
 # second solution
 def digit_adder_v2(num: int) -> int:
@@ -24,6 +24,7 @@ def digit_adder_v2(num: int) -> int:
 class TestAppMethods(unittest.TestCase):
     def testing_digit_adder_v1(self):
         self.assertEqual(digit_adder_v1(998), 10109)
+        self.assertEqual(digit_adder_v1(-998), -10109)
         self.assertEqual(digit_adder_v1(10109), 212110)
         
     
