@@ -41,10 +41,9 @@ def count_ones_v2(num: int) -> int:
 def count_ones_v3(num: int) -> int:
     original_num, power, ones, default_value = num, 0, 0, 0
     while num > 0:
-        modulo_value = original_num % 10 ** (power + 1)
         ones += num % 10 * default_value
         if num % 10 == 1:
-            ones += 1 + modulo_value % 10 ** power
+            ones += 1 + original_num % 10 ** power
         elif num % 10 > 1:
             ones += 10 ** power
         default_value = 10 ** power + 10 * default_value
