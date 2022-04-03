@@ -36,6 +36,21 @@ def count_ones_v2(num: int) -> int:
         original_num -= original_num // 10 ** index * 10 ** index
     return ones
     
+# third solution, one loop, o(log(n))
+@measuretime
+def count_ones_v3(num: int) -> int:
+    original_num, power, ones, default_value = num, 0, 0, 0
+    while num > 0:
+        modulo_value = original_num % 10 ** (power + 1)
+        ones += num % 10 * default_value
+        if num % 10 == 1:
+            ones += 1 + modulo_value % 10 ** power
+        elif num % 10 > 1:
+            ones += 10 ** power
+        default_value = 10 ** power + 10 * default_value
+        num //= 10
+        power += 1
+    return ones
 
 class TestAppMethods(unittest.TestCase):
     
@@ -52,10 +67,19 @@ class TestAppMethods(unittest.TestCase):
         self.assertEqual(count_ones_v2(10), 2)
         self.assertEqual(count_ones_v2(1020584), count_ones_v1(1020584))
 
+    def testing_count_ones_v3(self):
+        self.assertEqual(count_ones_v3(100), 21)
+        self.assertEqual(count_ones_v3(19), 12)
+        self.assertEqual(count_ones_v3(1), 1)
+        self.assertEqual(count_ones_v3(10), 2)
+        self.assertEqual(count_ones_v3(1020584), count_ones_v1(1020584))
+
 
 def main():
     print('v1:', count_ones_v1(1020584))
     print('v2:', count_ones_v2(1020584))
+    print('v3:', count_ones_v3(1020584))
+    
         
 if __name__ == '__main__':
     #unittest.main()
